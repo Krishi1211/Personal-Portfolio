@@ -62,11 +62,32 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				ink: {
+					DEFAULT: 'hsl(var(--ink) / <alpha-value>)',
+					raised: 'hsl(var(--ink-raised) / <alpha-value>)',
+					raised2: 'hsl(var(--ink-raised-2) / <alpha-value>)'
+				},
+				paper: {
+					DEFAULT: 'hsl(var(--paper) / <alpha-value>)',
+					dim: 'hsl(var(--paper-dim) / <alpha-value>)',
+					faint: 'hsl(var(--paper-faint) / <alpha-value>)'
+				},
+				line: {
+					DEFAULT: 'hsl(var(--line) / <alpha-value>)',
+					strong: 'hsl(var(--line-strong) / <alpha-value>)'
+				},
+				sig: {
+					ok: 'hsl(var(--sig-ok) / <alpha-value>)',
+					warn: 'hsl(var(--sig-warn) / <alpha-value>)',
+					crit: 'hsl(var(--sig-crit) / <alpha-value>)',
+					info: 'hsl(var(--sig-info) / <alpha-value>)'
 				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				mono: ['Fira Code', 'monospace'],
+				display: ['Space Grotesk', 'sans-serif'],
+				mono: ['IBM Plex Mono', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,6 +127,10 @@ export default {
 					'0%': { transform: 'translateY(-20px)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
 				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.35' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -116,6 +141,7 @@ export default {
 				'scale-out': 'scale-out 0.3s ease-out',
 				'slide-up': 'slide-up 0.5s ease-out',
 				'slide-down': 'slide-down 0.5s ease-out',
+				'pulse-soft': 'pulse-soft 2.4s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

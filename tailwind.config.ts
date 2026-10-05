@@ -77,7 +77,11 @@ export default {
 					DEFAULT: 'hsl(var(--line) / <alpha-value>)',
 					strong: 'hsl(var(--line-strong) / <alpha-value>)'
 				},
-				sig: {
+				gold: {
+						DEFAULT: 'hsl(var(--gold) / <alpha-value>)',
+						deep: 'hsl(var(--gold-deep) / <alpha-value>)'
+					},
+					sig: {
 					ok: 'hsl(var(--sig-ok) / <alpha-value>)',
 					warn: 'hsl(var(--sig-warn) / <alpha-value>)',
 					crit: 'hsl(var(--sig-crit) / <alpha-value>)',
@@ -85,9 +89,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Space Grotesk', 'sans-serif'],
-				mono: ['IBM Plex Mono', 'monospace'],
+				sans: ['Jost', 'sans-serif'],
+				display: ['Cormorant Garamond', 'serif'],
+				cinzel: ['Cinzel', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

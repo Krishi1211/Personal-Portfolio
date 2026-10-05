@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@500;600;700&family=Jost:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,35 @@
 
 @layer base {
   :root {
-    /* ---- surfaces ---- */
-    --ink: 216 22% 8%;          /* base background */
-    --ink-raised: 216 20% 11%;  /* panel / card background */
-    --ink-raised-2: 216 18% 14%;/* hover / nested panel */
-    --line: 216 14% 20%;        /* hairline borders */
-    --line-strong: 216 12% 28%;
+    /* warm night palette */
+    --ink: 30 20% 5%;
+    --ink-raised: 30 14% 9%;
+    --ink-raised-2: 30 12% 12%;
+    --line: 34 16% 20%;
+    --line-strong: 34 18% 30%;
 
-    /* ---- text ---- */
-    --paper: 210 20% 94%;       /* primary text */
-    --paper-dim: 216 10% 64%;   /* secondary text */
-    --paper-faint: 216 10% 44%; /* tertiary / meta text */
+    --paper: 38 26% 86%;
+    --paper-dim: 36 12% 64%;
+    --paper-faint: 34 9% 44%;
 
-    /* ---- signal colors (status semantics, used deliberately) ---- */
-    --sig-ok: 168 60% 58%;      /* teal — operational / shipped */
-    --sig-warn: 36 78% 58%;     /* amber — active / in progress */
-    --sig-crit: 355 78% 64%;    /* coral — archived / experimental */
-    --sig-info: 226 84% 68%;    /* indigo — interactive / links */
+    --gold: 36 46% 71%;
+    --gold-deep: 34 34% 46%;
 
-    /* shadcn compatibility layer, mapped onto the console palette */
+    /* status colors, kept soft so they sit inside the warm palette */
+    --sig-ok: 150 26% 60%;
+    --sig-warn: 38 72% 63%;
+    --sig-crit: 12 52% 60%;
+    --sig-info: 36 46% 71%;
+
+    /* shadcn compatibility layer */
     --background: var(--ink);
     --foreground: var(--paper);
     --card: var(--ink-raised);
     --card-foreground: var(--paper);
     --popover: var(--ink-raised);
     --popover-foreground: var(--paper);
-    --primary: var(--sig-info);
-    --primary-foreground: 216 22% 8%;
+    --primary: var(--gold);
+    --primary-foreground: 30 20% 5%;
     --secondary: var(--ink-raised-2);
     --secondary-foreground: var(--paper);
     --muted: var(--ink-raised);
@@ -40,11 +42,11 @@
     --accent: var(--ink-raised-2);
     --accent-foreground: var(--paper);
     --destructive: var(--sig-crit);
-    --destructive-foreground: 216 22% 8%;
+    --destructive-foreground: 30 20% 5%;
     --border: var(--line);
     --input: var(--line);
-    --ring: var(--sig-info);
-    --radius: 0.25rem;
+    --ring: var(--gold);
+    --radius: 0.5rem;
   }
 
   * {
@@ -56,23 +58,17 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
-    background-image:
-      linear-gradient(hsl(var(--line) / 0.35) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--line) / 0.35) 1px, transparent 1px);
-    background-size: 64px 64px;
-    background-position: -1px -1px;
+    @apply bg-background text-foreground antialiased font-sans font-light;
   }
 
   ::selection {
-    background: hsl(var(--sig-info) / 0.35);
+    background: hsl(var(--gold) / 0.3);
     color: hsl(var(--paper));
   }
 
   :focus-visible {
-    outline: 2px solid hsl(var(--sig-info));
-    outline-offset: 2px;
+    outline: 2px solid hsl(var(--gold));
+    outline-offset: 3px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -86,35 +82,20 @@
 }
 
 @layer components {
-  .font-display {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-  .font-mono {
-    font-family: 'IBM Plex Mono', monospace;
+  .label {
+    @apply font-sans text-[11px] sm:text-xs uppercase tracking-[0.32em] text-gold/70;
   }
 
-  .section-shell {
-    @apply max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28 scroll-mt-14 border-l border-r border-line;
+  .pill {
+    @apply inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-ink-raised/70 px-5 py-2.5 font-sans text-[11px] sm:text-xs uppercase tracking-[0.22em] text-gold backdrop-blur-sm transition-colors duration-200 hover:bg-gold/10 hover:border-gold/50;
   }
 
-  .eyebrow {
-    @apply font-mono text-[11px] tracking-[0.2em] uppercase text-paper-faint flex items-center gap-2;
+  .tag {
+    @apply inline-flex items-center rounded-full border border-line bg-ink-raised/60 px-3.5 py-1.5 font-sans text-xs text-paper-dim;
   }
 
   .status-dot {
     @apply inline-block w-1.5 h-1.5 rounded-full;
-  }
-
-  .hairline {
-    @apply border-t border-line/70;
-  }
-
-  .panel {
-    @apply bg-ink-raised border border-line;
-  }
-
-  .btn-console {
-    @apply inline-flex items-center gap-2 px-5 py-3 font-mono text-xs uppercase tracking-[0.12em] border transition-colors duration-200;
   }
 }
 

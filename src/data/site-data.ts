@@ -1,4 +1,4 @@
-// Central content registry for the site. Edit here — nothing else.
+// Central content registry for the site. Edit here - nothing else.
 
 export type Status = 'operational' | 'active' | 'archived';
 
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     name: 'SentinelOps',
     tagline: 'Multi-agent cloud incident response system',
     description:
-      'Agents plan, gather diagnostics, verify hypotheses, act, and document — with a human approval gate before anything touches production. Built on MCP so each agent calls real infrastructure tools instead of guessing.',
+      'Agents plan, gather diagnostics, verify hypotheses, act, and document - with a human approval gate before anything touches production. Built on MCP so each agent calls real infrastructure tools instead of guessing.',
     pipeline: ['PLAN', 'GATHER', 'VERIFY', 'ACT', 'DOCUMENT'],
     stack: ['MCP', 'AWS', 'Terraform', 'Ollama', 'Python'],
     status: 'active',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     name: 'Lily',
     tagline: 'Voice-first maternal health triage agent',
     description:
-      "Built at HackDavis. Callers talk to Lily over the phone; a deterministic rules engine — not the LLM — makes the actual clinical escalation call, so triage stays predictable even when the model isn't. Voice in, voice out, real-time.",
+      "Built at HackDavis. Callers talk to Lily over the phone; a deterministic rules engine - not the LLM - makes the actual clinical escalation call, so triage stays predictable even when the model isn't. Voice in, voice out, real-time.",
     pipeline: ['CALL', 'TRANSCRIBE', 'TRIAGE', 'ESCALATE', 'RESPOND'],
     stack: ['Twilio', 'Deepgram', 'ElevenLabs', 'Claude API', 'Rules Engine'],
     status: 'operational',
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     name: 'CodeBox',
     tagline: 'Docker-sandboxed multi-language code execution engine',
     description:
-      'Runs untrusted code across multiple languages in isolated, ephemeral containers — the kind of primitive that sits underneath online judges, coding assessments, and AI code-execution tools.',
+      'Runs untrusted code across multiple languages in isolated, ephemeral containers - the kind of primitive that sits underneath online judges, coding assessments, and AI code-execution tools.',
     stack: ['Docker', 'Python', 'Sandboxing'],
     status: 'operational',
     metric: 'Isolated, ephemeral execution per submission',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     name: 'Helix',
     tagline: 'LLM observability platform',
     description:
-      'Traces, logs, and evaluates local LLM calls end to end — built to answer the question every agent project eventually asks: what did the model actually see, and why did it do that.',
+      'Traces, logs, and evaluates local LLM calls end to end - built to answer the question every agent project eventually asks: what did the model actually see, and why did it do that.',
     stack: ['Ollama', 'PostgreSQL', 'Python'],
     status: 'active',
     metric: 'Full request/response tracing for local models',
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     name: 'Prometheus',
     tagline: 'Multi-modal AI content generation platform',
     description:
-      'Text, code, music, image, and video generation behind one interface, integrating OpenAI and LangChain. Reached 100+ active users in testing — the project that got me hooked on shipping AI products end to end.',
+      'Text, code, music, image, and video generation behind one interface, integrating OpenAI and LangChain. Reached 100+ active users in testing - the project that got me hooked on shipping AI products end to end.',
     stack: ['Next.js', 'LangChain', 'Prisma', 'Stripe', 'NLP'],
     status: 'archived',
     metric: '100+ active users in testing',
@@ -171,7 +171,7 @@ export interface TimelineItem {
 export const timeline: TimelineItem[] = [
   {
     id: 1,
-    period: 'Aug 2025 — Mar 2027 (expected)',
+    period: 'Aug 2025 - Mar 2027 (expected)',
     title: 'MS in Computer Science',
     org: 'University of California, Davis · GPA 3.8',
     description:
@@ -180,7 +180,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: 2,
-    period: 'Aug 2023 — Jun 2024',
+    period: 'Aug 2023 - Jun 2024',
     title: 'Junior Next.js Developer',
     org: 'Kenmark Itan Solutions',
     description:
@@ -189,7 +189,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: 3,
-    period: 'Apr 2023 — May 2024',
+    period: 'Apr 2023 - May 2024',
     title: 'Student Trainee',
     org: 'JPMorgan Chase & Co.',
     description:
@@ -198,7 +198,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: 4,
-    period: '2021 — 2025',
+    period: '2021 - 2025',
     title: 'BE in Computer Engineering',
     org: 'Dwarkadas J. Sanghvi College of Engineering',
     description:
@@ -245,5 +245,5 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/krishishah1211/',
   twitter: 'https://x.com/KrishiS13923223',
   resumeUrl: '/Krishi.pdf',
-  availability: 'CPT ELIGIBLE — OPEN TO SWE ROLES',
+  availability: 'CPT ELIGIBLE - OPEN TO SWE ROLES',
 };
